@@ -2,7 +2,7 @@ package com.sorting.quickSort;
 
 import java.util.Arrays;
 
-public class Exercise7p25a {
+public class Exercise7p25 {
     public static final int CUTOFF = 10;
 
     public static void quickSort(int[] a) {
@@ -44,8 +44,14 @@ public class Exercise7p25a {
             }
 
             swap(a, i, right - 1);
-            quickSort(a, left, i - 1);
-            quickSort(a, i + 1, right);
+            int ind = 0;
+            int[] leftArr = {left, i + 1};
+            int[] rightArr = {i - 1, right};
+
+            while (ind < 2) {
+                quickSort(a, leftArr[ind], rightArr[ind]);
+                ind++;
+            }
         }
     }
 
