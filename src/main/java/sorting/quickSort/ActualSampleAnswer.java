@@ -1,8 +1,8 @@
-package com.sorting.quickSort;
+package sorting.quickSort;
 
 import java.util.Arrays;
 
-public class Exercise7p25 {
+public class ActualSampleAnswer {
     public static final int CUTOFF = 10;
 
     public static void quickSort(int[] a) {
@@ -26,9 +26,7 @@ public class Exercise7p25 {
     }
 
     private static void quickSort(int[] a, int left, int right) {
-        if (left + CUTOFF > right) {
-            insertionSort(a, left, right);
-        } else {
+        if (left + CUTOFF <= right) {
             int pivot = median3(a, left, right);
             int i = left, j = right - 1;
             for (; ; ) {
@@ -44,14 +42,10 @@ public class Exercise7p25 {
             }
 
             swap(a, i, right - 1);
-            int ind = 0;
-            int[] leftArr = {left, i + 1};
-            int[] rightArr = {i - 1, right};
-
-            while (ind < 2) {
-                quickSort(a, leftArr[ind], rightArr[ind]);
-                ind++;
-            }
+            quickSort(a, left, i - 1);
+            quickSort(a, i + 1, right);
+        } else {
+            insertionSort(a, left, right);
         }
     }
 

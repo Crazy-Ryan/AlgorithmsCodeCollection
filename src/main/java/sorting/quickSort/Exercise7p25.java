@@ -1,11 +1,8 @@
-package com.sorting.quickSort;
+package sorting.quickSort;
 
-import com.sorting.insertionSort.InsertionSort;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class ActualSampleAnswer {
+public class Exercise7p25 {
     public static final int CUTOFF = 10;
 
     public static void quickSort(int[] a) {
@@ -29,7 +26,9 @@ public class ActualSampleAnswer {
     }
 
     private static void quickSort(int[] a, int left, int right) {
-        if (left + CUTOFF <= right) {
+        if (left + CUTOFF > right) {
+            insertionSort(a, left, right);
+        } else {
             int pivot = median3(a, left, right);
             int i = left, j = right - 1;
             for (; ; ) {
@@ -45,10 +44,14 @@ public class ActualSampleAnswer {
             }
 
             swap(a, i, right - 1);
-            quickSort(a, left, i - 1);
-            quickSort(a, i + 1, right);
-        } else {
-            insertionSort(a, left, right);
+            int ind = 0;
+            int[] leftArr = {left, i + 1};
+            int[] rightArr = {i - 1, right};
+
+            while (ind < 2) {
+                quickSort(a, leftArr[ind], rightArr[ind]);
+                ind++;
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package com.sorting.heapSort;
+package sorting.heapSort;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

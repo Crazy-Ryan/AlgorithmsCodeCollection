@@ -1,6 +1,5 @@
-package com.sorting.quickSort;
+package sorting.quickSort;
 
-import com.sorting.mergeSort.MergeSort;
 import java.util.Arrays;
 
 public class QuickSort {

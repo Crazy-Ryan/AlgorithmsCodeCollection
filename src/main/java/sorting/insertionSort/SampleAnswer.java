@@ -1,4 +1,4 @@
-package com.sorting.insertionSort;
+package sorting.insertionSort;
 
 public class SampleAnswer {
     private static void sort(int[] a) {

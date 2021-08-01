@@ -1,6 +1,5 @@
-package com.sorting.bubbleSort;
+package sorting.bubbleSort;
 
-import com.sorting.selectionSort.SelectionSort;
 import java.util.Arrays;
 
 public class BubbleSort {

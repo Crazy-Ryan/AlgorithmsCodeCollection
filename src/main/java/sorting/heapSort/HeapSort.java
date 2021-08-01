@@ -1,9 +1,6 @@
-package com.sorting.heapSort;
+package sorting.heapSort;
 
-import static jdk.nashorn.internal.objects.NativeMath.min;
-import static sun.swing.MenuItemLayoutHelper.max;
 
-import com.sorting.shellSort.ShellSort;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -38,7 +35,7 @@ public class HeapSort {
         int leftChildPos = 2 * pos + 1;
         int rightChildPos = 2 * pos + 2;
         if (rightChildPos < size) {
-            if (lastNodeValue < max(arr[leftChildPos], arr[rightChildPos])) {
+            if (lastNodeValue < Math.max(arr[leftChildPos], arr[rightChildPos])) {
                 if (arr[leftChildPos] > arr[rightChildPos]) {
                     arr[pos] = arr[leftChildPos];
                     percolateUp(arr, size, leftChildPos);
@@ -61,7 +58,7 @@ public class HeapSort {
         int leftChildPos = 2 * pos + 1;
         int rightChildPos = 2 * pos + 2;
         if (rightChildPos < size) {
-            if (arr[pos] < max(arr[leftChildPos], arr[rightChildPos])) {
+            if (arr[pos] < Math.max(arr[leftChildPos], arr[rightChildPos])) {
                 if (arr[leftChildPos] > arr[rightChildPos]) {
                     swap(arr, pos, leftChildPos);
                     percolateDown(arr, leftChildPos);

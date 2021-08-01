@@ -1,6 +1,5 @@
-package com.sorting.shellSort;
+package sorting.shellSort;
 
-import com.sorting.bubbleSort.BubbleSort;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
